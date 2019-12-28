@@ -13,7 +13,8 @@ if ($a['id'] == 'none'){
 }
 else{
     $authorname = get_the_author_meta('user_firstname',$a['id']) . " " . get_the_author_meta('user_lastname',$a['id']);
-    $credit = $authorname . "/The Phillipian";
+    $authorlink = get_author_posts_url($a['id']);
+    $credit = "<a href='". $authorlink . "'>" . $authorname . "/The Phillipian</a>";
 }
 
 // get the actual image enclosed

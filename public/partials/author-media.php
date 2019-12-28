@@ -28,7 +28,7 @@
 ?>
 <div class="media-archive">
     <?php
-    if (count($media) > 0) :
+    if (!(empty($media))) :
     foreach ( $media as $attachment ) : ?>
         <?php
         \setup_postdata( $attachment );
