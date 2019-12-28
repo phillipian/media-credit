@@ -1,3 +1,9 @@
+# Phillipian Media Credit
+
+A fork of Peter Putzer's Media-Credit WordPress plugin, for internal use on phillipian.net.
+
+# ORIGINAL README BELOW
+
 === Media Credit ===
 Contributors: pputzer, sbressler
 Tags: media, image, images, credit, byline, author, user

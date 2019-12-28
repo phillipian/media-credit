@@ -15,3 +15,6 @@ build/*
 
 # sass
 .sass-cache/*
+
+# PhpStorm
+.idea/*
