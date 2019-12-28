@@ -21,7 +21,7 @@
  *
  *  ***
  *
- * @package mundschenk-at/media-credit
+ * @package phillipian/media-credit
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
