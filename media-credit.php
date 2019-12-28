@@ -25,12 +25,12 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @wordpress-plugin
- * Plugin Name: Media Credit
- * Plugin URI: https://code.mundschenk.at/media-credit/
- * Description: This plugin adds a "Credit" field to the media uploading and editing tool and inserts this credit when the images appear on your blog.
+ * Plugin Name: Phillipian/Media Credit
+ * Plugin URI: https://github.com/phillipian/media-credit
+ * Description: A fork of Peter Putzer's Media-Credit WordPress plugin, for internal use on phillipian.net.
  * Version: 4.0.4
- * Author: Peter Putzer
- * Author URI: https://code.mundschenk.at/
+ * Author: Samson Zhang
+ * Author URI: https://www.samsonzhang.com/
  * License: GNU General Public License v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: media-credit

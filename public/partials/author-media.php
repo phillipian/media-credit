@@ -21,31 +21,42 @@
  *
  *  ***
  *
- * @package mundschenk-at/media-credit
+ * @package phillipian/media-credit
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 ?>
-<div id="recent-media-<?php echo ( $sidebar ? 'sidebar' : 'inline' ); ?>">
-	<?php if ( \is_string( $header ) ) : ?>
-		<h3><?php \esc_html_e( 'Recent Media', 'media-credit' ); ?></h3>
-	<?php else : ?>
-		<?php echo \wp_kses_post( $header ); ?>
-	<?php endif; ?>
-	<?php foreach ( $media as $attachment ) : ?>
-		<?php
-			\setup_postdata( $attachment );
+<div class="media-archive">
+    <?php
+    if (count($media) > 0) :
+    foreach ( $media as $attachment ) : ?>
+        <?php
+        \setup_postdata( $attachment );
 
-			// If media is attached to a post, link to the parent post. Otherwise, link to attachment page itself.
-		?>
-		<div class='author-media' id='attachment-<?php echo \esc_attr( $attachment->ID ); ?>'>
-			<?php if ( $attachment->post_parent > 0 ) : ?>
-				<a href="<?php \the_permalink( $attachment->post_parent ); ?>" title="<?php \the_title_attribute( $attachment->post_parent ); ?>"><?php echo \wp_get_attachment_image( $attachment->ID, 'thumbnail' ); ?></a>
-			<?php elseif ( $link_without_parent ) : ?>
-				<?php echo \wp_get_attachment_image( $attachment->ID, 'thumbnail' ); ?>
-			<?php else : ?>
-				<?php echo \wp_get_attachment_link( $attachment->ID, 'thumbnail', true ); ?>
-			<?php endif; ?>
-		</div>
-	<?php endforeach; ?>
+        // If media is attached to a post, link to the parent post. Otherwise, link to attachment page itself.
+        ?>
+        <div class='media-archive-item' id='attachment-<?php echo \esc_attr( $attachment->ID ); ?>'>
+            <?php if ( $attachment->post_parent > 0 ) : ?>
+                <a href="<?php \the_permalink( $attachment->post_parent ); ?>" title="<?php \the_title_attribute( $attachment->post_parent ); ?>"><?php echo \wp_get_attachment_image( $attachment->ID, 'large' ); ?></a>
+            <?php elseif ( $link_without_parent ) : ?>
+                <?php echo \wp_get_attachment_image( $attachment->ID, 'large' ); ?>
+            <?php else : ?>
+                <?php echo \wp_get_attachment_link( $attachment->ID, 'large', true ); ?>
+            <?php endif; ?>
+        </div>
+    <?php
+    endforeach; ?>
+        <script>
+            var $grid = $(".media-archive").masonry({
+                itemSelector: '.media-archive-item',
+                percentPosition: true,
+                gutter: 24,
+                columnWidth: '.media-archive-item'
+            });
+            $grid.imagesLoaded(function() {
+                $grid.masonry();
+            });
+        </script>
+
+    <?php endif; ?>
 </div>
