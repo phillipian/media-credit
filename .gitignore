@@ -2,7 +2,6 @@
 *~
 
 # Composer
-vendor/*
 composer.lock
 
 
